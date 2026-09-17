@@ -1,0 +1,69 @@
+/* Screen-size and print adjustments. */
+
+@media (max-width: 700px) {
+  .publication::before {
+    left: -.55rem;
+  }
+
+  .publication:hover {
+    background: transparent;
+  }
+
+  .publication h3 {
+    font-size: 1.12rem;
+  }
+}
+
+@media (max-width: 430px) {
+  nav {
+    gap: .55rem;
+  }
+
+  .intro-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  .publication {
+    grid-template-columns: 2rem 1fr;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: #111;
+  }
+
+  .site-header nav,
+  .intro-actions,
+  .site-footer {
+    display: none;
+  }
+
+  .intro {
+    min-height: 0;
+    padding: 2rem 0;
+  }
+
+  .section-rule {
+    break-inside: avoid;
+    padding: 2rem 0;
+  }
+
+  .publication {
+    break-inside: avoid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

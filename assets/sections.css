@@ -1,0 +1,105 @@
+/*
+  Section-level styling.
+  This file holds visual polish for the academic content, while styles.css
+  contains the foundation and responsive.css contains screen-size overrides.
+*/
+
+::selection {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+body {
+  background:
+    linear-gradient(90deg, transparent 0, transparent calc(50% - .5px), rgba(26, 71, 120, .025) 50%, transparent calc(50% + .5px)),
+    var(--paper);
+  background-size: 100% 100%, 100% 100%;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 4px;
+}
+
+.site-header {
+  position: relative;
+}
+
+nav a {
+  position: relative;
+  padding: .35rem 0;
+}
+
+nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: .05rem;
+  left: 0;
+  height: 1px;
+  background: var(--blue);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.intro-copy {
+  animation: rise-in .55s ease both;
+}
+
+.section-rule {
+  position: relative;
+}
+
+.section-label h2 {
+  color: var(--ink);
+}
+
+.credential-list {
+  max-width: 54rem;
+}
+
+.credential-list dt {
+  font: 600 1.18rem/1.2 var(--serif);
+  letter-spacing: -.015em;
+  text-transform: none;
+}
+
+.credential-list dd {
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  text-decoration-thickness: 1px;
+}
+
+.publication-link::after {
+  content: "↗";
+  font-size: .78em;
+}
+
+.profile-links a {
+  border-bottom: 1px solid transparent;
+  padding-bottom: .15rem;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.profile-links a:hover,
+.profile-links a:focus-visible {
+  color: var(--blue);
+  border-color: currentColor;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
