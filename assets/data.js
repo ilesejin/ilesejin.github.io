@@ -8,13 +8,14 @@ window.siteData = {
   name: "Sejin Park",
   intro: "I am an undergraduate student at Seoul National University. I am interested in cryptography, especially in homomorphic encryption.",
   cvFile: "assets/sejin-park-cv.pdf",
+  email: "ilesejin@snu.ac.kr",
   facts: [
     ["Seoul National University", "B.S. Mathematics, Computer Science · Expected February 2028"],
     ["Charles University", "Exchange Student · 2026-2027"],
     ["Languages", "Korean: Native · English: Fluent · Japanese: Fluent (JLPT N1)"],
   ],
   experience: [
-    ["Cryptolab", "Research Intern · 2025-2026"],
+    ["Cryptolab", "Research Intern · March 2025 – January 2026", "Homomorphic Encryption Optimization Team."],
   ],
   publications: [
     {
