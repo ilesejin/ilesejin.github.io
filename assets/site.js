@@ -26,6 +26,17 @@
     facts.append(group);
   });
 
+  const languages = document.querySelector("[data-languages]");
+  data.languages.forEach(([language, proficiency]) => {
+    const row = document.createElement("div");
+    const term = document.createElement("dt");
+    const description = document.createElement("dd");
+    term.textContent = language;
+    description.textContent = proficiency;
+    row.append(term, description);
+    languages.append(row);
+  });
+
   const experience = document.querySelector("[data-experience]");
   data.experience.forEach(([term, definition, description]) => {
     const group = document.createElement("div");
@@ -85,14 +96,14 @@
     publications.append(item);
   });
 
-  const footerLinks = document.querySelector("[data-footer-links]");
-  data.footerLinks.forEach((profile) => {
+  const profileLinks = document.querySelector("[data-profile-links]");
+  data.profileLinks.forEach((profile) => {
     const anchor = document.createElement("a");
     anchor.href = profile.url;
     anchor.target = "_blank";
     anchor.rel = "noreferrer";
     anchor.textContent = profile.label;
-    footerLinks.append(anchor);
+    profileLinks.append(anchor);
   });
 
 })();

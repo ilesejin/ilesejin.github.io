@@ -79,6 +79,40 @@ nav a:focus-visible::after {
   margin-top: .35rem;
 }
 
+.language-details {
+  margin-top: 1.75rem;
+}
+
+.language-details h3 {
+  margin: 0 0 .65rem;
+  color: var(--muted);
+  font: 500 .9rem/1.5 var(--sans);
+}
+
+.language-list {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.language-list div {
+  display: grid;
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  gap: .75rem;
+}
+
+.language-list div + div {
+  margin-top: .3rem;
+}
+
+.language-list dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.language-list dd::before {
+  content: "— ";
+}
+
 .publication-link {
   display: inline-flex;
   align-items: center;

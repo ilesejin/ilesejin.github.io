@@ -12,7 +12,11 @@ window.siteData = {
   facts: [
     ["Seoul National University", "B.S. Mathematics, Computer Science · Expected February 2028"],
     ["Charles University", "Exchange Student · 2026-2027"],
-    ["Languages", "Korean: Native · English: Fluent · Japanese: Fluent (JLPT N1)"],
+  ],
+  languages: [
+    ["Korean", "Native"],
+    ["English", "Fluent"],
+    ["Japanese", "Fluent · JLPT N1"],
   ],
   experience: [
     ["Cryptolab", "Research Intern · March 2025 – January 2026", "Homomorphic Encryption Optimization Team."],
@@ -28,7 +32,7 @@ window.siteData = {
       ],
     },
   ],
-  footerLinks: [
+  profileLinks: [
     { label: "GitHub", url: "https://github.com/ilesejin" },
     { label: "Google Scholar", url: "https://scholar.google.com/citations?user=nRLflTwAAAAJ" },
   ],

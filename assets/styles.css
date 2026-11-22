@@ -24,8 +24,8 @@ body {
 a { color: inherit; }
 .skip-link { position: fixed; left: 1rem; top: -3rem; background: var(--ink); color: white; padding: .5rem .75rem; z-index: 5; }
 .skip-link:focus { top: 1rem; }
-.section-shell { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; }
-.site-header { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; padding: 1.65rem 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.section-shell { width: min(960px, calc(100% - 3rem)); margin: 0 auto; }
+.site-header { width: min(960px, calc(100% - 3rem)); margin: 0 auto; padding: 1.65rem 0; display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .wordmark { display: inline-flex; align-items: center; text-decoration: none; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; letter-spacing: -.045em; }
 .site-name { margin: 0; font: inherit; line-height: 1.2; }
 nav { display: flex; flex-wrap: wrap; gap: 1.3rem; font-family: var(--mono); font-size: .9rem; }
@@ -37,13 +37,10 @@ nav a:hover, nav a:focus-visible { text-decoration: underline; text-underline-of
 h1, h2, h3, p { margin-top: 0; }
 h1 { margin-bottom: 1.35rem; font: 600 clamp(3.2rem, 7.5vw, 6.7rem)/.89 var(--serif); letter-spacing: -.065em; }
 .lede { max-width: 50rem; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); }
-.intro-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
-.contact-line { margin: 1.5rem 0 0; color: var(--blue); overflow-wrap: anywhere; }
-.contact-line a { text-underline-offset: .25rem; }
-.button { display: inline-flex; align-items: center; gap: 1rem; padding: .78rem 1rem; border-radius: .2rem; text-decoration: none; font-size: .95rem; font-weight: 600; }
-.button-primary { background: var(--ink); color: white; box-shadow: 4px 4px 0 var(--mint); transition: transform .16s ease, box-shadow .16s ease; }
-.button-primary:hover, .button-primary:focus-visible { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--mint); }
-.text-link, .publication-link { font-weight: 600; text-underline-offset: .28rem; }
+.intro-links, .profile-links { display: flex; align-items: baseline; flex-wrap: wrap; gap: .5rem 1.4rem; }
+.intro-links { margin-top: 1.25rem; color: var(--blue); font-size: .95rem; }
+.intro-links a { padding: .2rem 0; text-underline-offset: .25rem; overflow-wrap: anywhere; }
+.publication-link { font-weight: 600; text-underline-offset: .28rem; }
 
 .section-rule { border-top: 1px solid var(--line); padding: 3rem 0; }
 .section-label { margin-bottom: 1.5rem; }
@@ -65,19 +62,16 @@ h1 { margin-bottom: 1.35rem; font: 600 clamp(3.2rem, 7.5vw, 6.7rem)/.89 var(--se
 .publication-description { max-width: 45rem; margin-bottom: .65rem; color: var(--muted); font-size: .82rem; }
 .publication-links { display: flex; flex-wrap: wrap; gap: .75rem; }
 .publication-link { color: var(--blue); font-size: .95rem; }
-.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.4rem 0 2.2rem; color: var(--muted); font: .72rem var(--mono); }
+.site-footer { padding: 1.4rem 0 2.2rem; color: var(--muted); font: .8rem var(--sans); }
 .site-footer p { margin: 0; }
-.footer-links { display: flex; gap: 1rem; }
-.footer-links a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: .22rem; }
 
 @media (max-width: 700px) {
-  .section-shell, .site-header { width: min(100% - 2rem, 1120px); }
+  .section-shell, .site-header { width: min(100% - 2rem, 960px); }
   .site-header { padding: 1.25rem 0; align-items: flex-start; flex-direction: column; gap: .75rem; }
   nav { gap: .5rem 1rem; }
   .intro { padding: 2.5rem 0; }
   .section-rule { padding: 2.5rem 0; }
   .facts div + div { margin-top: 1rem; }
-  .site-footer { align-items: flex-start; flex-direction: column; }
 }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button-primary { transition: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
