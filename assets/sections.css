@@ -10,14 +10,20 @@
 }
 
 body {
-  background:
-    linear-gradient(90deg, transparent 0, transparent calc(50% - .5px), rgba(26, 71, 120, .025) 50%, transparent calc(50% + .5px)),
-    var(--paper);
-  background-size: 100% 100%, 100% 100%;
+  border-top: 4px solid var(--accent);
+  background: var(--paper);
+}
+
+.wordmark {
+  color: var(--accent);
+}
+
+.lede {
+  color: var(--ink);
 }
 
 a:focus-visible {
-  outline: 3px solid var(--mint);
+  outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
 
@@ -36,7 +42,7 @@ nav a::after {
   bottom: .05rem;
   left: 0;
   height: 1px;
-  background: var(--blue);
+  background: var(--accent);
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -58,10 +64,41 @@ nav a:focus-visible::after {
 
 .section-label h2 {
   color: var(--ink);
+  display: inline-block;
+  padding: 0 .2rem .15rem 0;
+  background: linear-gradient(transparent 72%, var(--mint) 72%);
+}
+
+nav a:hover,
+.intro-links a:hover,
+.publication-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.intro-links a:hover,
+.publication-link:hover {
+  text-decoration-thickness: 2px;
 }
 
 .credential-list {
   max-width: 54rem;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li + li {
+  margin-top: 1.45rem;
+}
+
+.project-list a {
+  color: var(--accent);
+  font: 600 1.18rem/1.4 var(--serif);
+  text-underline-offset: .2em;
 }
 
 .credential-list dt {
@@ -85,7 +122,7 @@ nav a:focus-visible::after {
 
 .language-details h3 {
   margin: 0 0 .65rem;
-  color: var(--muted);
+  color: var(--accent);
   font: 500 .9rem/1.5 var(--sans);
 }
 
@@ -133,7 +170,7 @@ nav a:focus-visible::after {
 
 .profile-links a:hover,
 .profile-links a:focus-visible {
-  color: var(--blue);
+  color: var(--accent);
   border-color: currentColor;
 }
 

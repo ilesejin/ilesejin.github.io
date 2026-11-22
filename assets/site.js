@@ -67,7 +67,7 @@
       </div>`;
     item.querySelector("h3").textContent = publication.title;
     const citation = item.querySelector(".citation");
-    publication.authors.split(", ").forEach((author, authorIndex) => {
+    (publication.displayAuthors || publication.authors).split(", ").forEach((author, authorIndex) => {
       if (authorIndex) citation.append(", ");
       if (author === data.name) {
         const name = document.createElement("strong");
@@ -80,6 +80,15 @@
     const venue = document.createElement("em");
     venue.textContent = publication.venue;
     citation.append(" · ", venue, ` · ${publication.year}`);
+
+    if (publication.contribution) {
+      const contribution = document.createElement("p");
+      contribution.className = "publication-contribution";
+      const role = document.createElement("strong");
+      role.textContent = publication.contribution.role;
+      contribution.append(role);
+      citation.after(contribution);
+    }
 
     const linkWrap = item.querySelector(".publication-links");
     publication.links.forEach((link) => {
@@ -94,6 +103,16 @@
       linkWrap.append(anchor);
     });
     publications.append(item);
+  });
+
+  const projects = document.querySelector("[data-projects]");
+  data.projects.forEach((project) => {
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = project.url;
+    link.textContent = project.title;
+    item.append(link);
+    projects.append(item);
   });
 
   const profileLinks = document.querySelector("[data-profile-links]");
